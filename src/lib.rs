@@ -1,4 +1,8 @@
+// cargo bundle-licenses --prefer MIT --format toml --output ./pkg/THIRD_PARTY_LICENSES.toml
 // wasm-pack build --release --no-pack --no-typescript --target web
+
+// Used to double check no infectious dependencies
+// cargo license
 
 mod space {
 	pub mod space;
@@ -37,3 +41,5 @@ macro_rules! generate_bindings {
 generate_bindings!(day_01, day_01_1, day_01_2);
 generate_bindings!(day_02, day_02_1, day_02_2);
 generate_bindings!(day_03, day_03_1, day_03_2);
+generate_bindings!(day_04, day_04_1, day_04_2);
+generate_bindings!(day_05, day_05_1, day_05_2);

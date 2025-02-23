@@ -26,7 +26,7 @@ pub fn day_03_1 (input: &str) -> String {
 }
 
 pub fn day_03_2 (input: &str) -> String {
-	let mut input = parse_input(input).collect::<Vec<_>>();
+	let input = parse_input(input).collect::<Vec<_>>();
 	let mut flesh_santa_route = vec![];
 	let mut robot_santa_route = vec![];
 

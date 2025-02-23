@@ -70,3 +70,5 @@ generate_bindings!(day_03, day_03_tests, day_03_1, day_03_2);
 generate_bindings!(day_04, day_04_tests, day_04_1, day_04_2);
 generate_bindings!(day_05, day_05_tests, day_05_1, day_05_2);
 generate_bindings!(day_06, day_06_tests, day_06_1, day_06_2);
+// generate_bindings!(day_07, day_07_tests, day_07_1, day_07_2);
+generate_bindings!(day_08, day_08_tests, day_08_1, day_08_2);

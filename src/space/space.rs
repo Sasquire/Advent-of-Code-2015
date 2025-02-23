@@ -26,7 +26,7 @@ impl<Star: std::clone::Clone> Space2d<Star> {
 }
 
 impl Space2d<String> {
-	pub fn new_from_string (input: String) -> Space2d<String> {
+	pub fn new_from_str (input: &str) -> Space2d<String> {
 		let data = input.lines()
 			.map(|row| row.chars().map(|x| x.to_string()).collect::<Vec<_>>())
 			.collect::<Vec<_>>();
@@ -40,13 +40,6 @@ impl Space2d<String> {
 
 			data: data
 		};
-	}
-
-	pub fn new_from_file (file_path: &str) -> Space2d<String> {
-		let file_contents = std::fs::read_to_string(file_path)
-			.expect(&format!("Could not find \"{}\". Did you make a typo?", file_path));
-
-		return Space2d::new_from_string(file_contents);
 	}
 }
 

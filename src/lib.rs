@@ -43,3 +43,4 @@ generate_bindings!(day_02, day_02_1, day_02_2);
 generate_bindings!(day_03, day_03_1, day_03_2);
 generate_bindings!(day_04, day_04_1, day_04_2);
 generate_bindings!(day_05, day_05_1, day_05_2);
+generate_bindings!(day_06, day_06_1, day_06_2);

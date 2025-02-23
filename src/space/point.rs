@@ -110,6 +110,13 @@ impl Point2d {
 		Point2d { coordinates: [x, y] }
 	}
 
+	pub fn new_from_csv (input: &str) -> Point2d {
+		let mut separated = input.split(",").map(|y| isize::from_str_radix(y, 10).unwrap());
+		let x = separated.next().unwrap();
+		let y = separated.next().unwrap();
+		return Point2d { coordinates: [x, y] };
+	}
+
 	// Higher dimensions include up, down, ana, kata
 	pub fn north (&self) -> Point2d { self + DIMENSIONS_2D_DIRECTION_NORTH }
 	pub fn east (&self) -> Point2d { self + DIMENSIONS_2D_DIRECTION_EAST }

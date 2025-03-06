@@ -98,8 +98,7 @@ fn apply_rules (machine_state: &mut HashMap<String, u16>, rules: &Vec<Rule>) {
 				Action::And => from_a & from_b.unwrap(),
 				Action::Or => from_a | from_b.unwrap(),
 				Action::Rshift => from_a >> from_b.unwrap(),
-				Action::Lshift => from_a << from_b.unwrap(),
-				_ => panic!()
+				Action::Lshift => from_a << from_b.unwrap()
 			};
 
 			machine_state.insert(rule.to.clone(), result);

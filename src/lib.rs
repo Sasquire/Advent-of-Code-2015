@@ -10,6 +10,10 @@ mod space {
 	pub mod point;
 }
 
+mod graph {
+	pub mod graph;
+}
+
 use wasm_bindgen::prelude::*;
 
 // https://stackoverflow.com/a/77835585
@@ -72,3 +76,4 @@ generate_bindings!(day_05, day_05_tests, day_05_1, day_05_2);
 generate_bindings!(day_06, day_06_tests, day_06_1, day_06_2);
 // generate_bindings!(day_07, day_07_tests, day_07_1, day_07_2);
 generate_bindings!(day_08, day_08_tests, day_08_1, day_08_2);
+generate_bindings!(day_09, day_09_tests, day_09_1, day_09_2);

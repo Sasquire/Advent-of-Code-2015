@@ -1,6 +1,8 @@
 use crate::space::point::Point2d;
 use std::collections::HashSet;
 
+use itertools::Itertools;
+
 fn parse_input (input: &str) -> impl Iterator<Item = Point2d> + '_ {
 	return input.chars().map(|x| match x {
 		'^' => Point2d::cardinal_north(),
@@ -26,14 +28,11 @@ pub fn day_03_1 (input: &str) -> String {
 }
 
 pub fn day_03_2 (input: &str) -> String {
-	let input = parse_input(input).collect::<Vec<_>>();
-	let mut flesh_santa_route = vec![];
-	let mut robot_santa_route = vec![];
-
-	for i in (0..input.len()).step_by(2) {
-		flesh_santa_route.push(input[i + 0]);
-		robot_santa_route.push(input[i + 1]);
-	}
+	let (flesh_santa_route, robot_santa_route) = parse_input(input)
+		.chunks(2)
+		.into_iter()
+		.map(|mut row| (row.next().unwrap(), row.next().unwrap()))
+		.unzip::<Point2d, Point2d, Vec<_>, Vec<_>>();
 
 	let mut all_houses = HashSet::new();
 	all_houses.extend(houses_visited(flesh_santa_route.into_iter()));
